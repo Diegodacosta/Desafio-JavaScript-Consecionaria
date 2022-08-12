@@ -38,13 +38,6 @@ botonEmpezar.addEventListener('click', agregarAuto);
 
 
 
-
-
-
-
-
-
-
 const botonBuscar = document.getElementById('botonBusqueda');
 
 function ordenar(criterio, array) {
@@ -140,4 +133,20 @@ if (arrayFiltrado3 == 0) {
 } else {
     const filtrados3 = arrayFiltrado3.map(auto => auto.modelo);
     alert("Los autos con precio menor o igual a " + precioMaximo + " son: " + filtrados3.join('\n'));
+}
+
+//JSON de autos
+localStorage.setItem('autos', JSON.stringify(autos));
+
+localStorage.setItem('auto', 'Fiat Cronos');
+sessionStorage.setItem('auto', 'Peugeot 206');
+
+function obtenerAutos() {
+    let autos = JSON.parse(localStorage.getItem('autos'));
+    console.log(autos);
+}
+
+function sacarAutos() {
+    let autos = JSON.parse(localStorage.clear('autos'));
+
 }
